@@ -1,0 +1,61 @@
+- 📝 **ERC721 - EssenceCollectible contract**
+    - 📍 **Deployment checks**
+        - ✓ Total supply should be 19 (Reserved tokens)
+        - ✓ Name should be set on deployment
+        - ✓ Symbol should be set on deployment
+        - ✓ Decimals and Max per Tx should be constants
+        - ✓ Minter should be address 0x0 on deployment
+        - ✓ Base_URI should be empty on deployment
+        - ✓ Current token ID should be 19 (forthcoming)
+        - ✓ Balance of owner should be 19
+        - ✓ Should reject sending ether directly to the contract (218ms)
+    - 📍 **Supported interfaces**
+        - ✓ Should support ERC721 extension
+        - ✓ Should support ERC721Enumerable interface
+        - ✓ Should support ERC721Metadata interface
+        - ✓ Should not support ERC721TokenReceiver interface
+    - 📍 **Essences Release(s)**
+        - ✓ Should correctly set minter address (63ms)
+        - ✓ Shouldn't be allowed to mint essences if not minter
+        - ✓ Owner should be allowed to directly mint essences (170ms)
+        - ✓ Should not be possible to mint more than max amount per tx
+        - ✓ Should check against correct supply
+        - ✓ Should release the correct amount to the correct owner (128ms)
+    - 📍 **POST Release checks**
+        - ✓ Should increase currentTokenId (154ms)
+        - ✓ Client balance should increase (139ms)
+        - ✓ Total supply should increase
+        - ✓ Should correctly map essencesById (Preassigned)
+        - ✓ Should correctly map tokenOfOwnerByIndex
+        - ✓ Should not be possible to mint more than total supply (547ms)
+
+- 📝 **NFT Crowdsale contract**
+    - 📍 **Deployment checks**
+        - ✓ Wei raised supply should be 0
+        - ✓ Wallet address should be undefined
+        - ✓ Price should be set and equals 1000000000000000
+        - ✓ NFT token address should be set on deploy
+        - ✓ Should reject sending ether directly to the contract (48ms)
+
+- 📝 **Crowdsale/NFT interaction flow**
+    - 📍 **Essences Release flow**
+        - ✓ Should correctly set minter address (45ms)
+        - ✓ Should emit the MinterAdded event
+        - ✓ Shouldn't be allowed to mint essences if not minter anymore
+        - ✓ Should not be possible to mint more than max amount per tx
+        - ✓ Should revert if msg.value equals 0 (38ms)
+        - ✓ Should revert if price mismatches essences length (41ms)
+        - ✓ Should issue the correct amount of tokens (single release) (69ms)
+        - ✓ Should issue the correct amount of tokens (multiple release) (174ms)
+        - ✓ Should forward funds to the correct wallet (single release) (71ms)
+        - ✓ Should forward funds to the correct wallet (multiple release) (182ms)
+        - ✓ Should correctly track weiRaised state (181ms)
+
+- 📝 **Ownership - EssenceCollectible contract**
+    - 📍 **Ownership management function**
+        - ✓ Owner should be set on deployment
+        - ✓ If not owner shouldn't be able to transfer ownership
+        - ✓ Owner should be able to transfer ownership (41ms)
+        - ✓ If not owner shouldn't be able to set minter address
+
+45 passing (7s)
