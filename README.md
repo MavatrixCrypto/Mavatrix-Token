@@ -1,5 +1,7 @@
 # Mavatrix smart contracts
 
+> MVTX Token contract address (BSC mainnet): 0xF0d9ef7A3aEc9f59d08961F5ea65834271A38aDF
+
 ## Solidity ERC721 and crowdsale smart contracts
 
 The project is configured to run on Binance Smart Chain with these [truffle configs](https://docs.binance.org/smart-chain/developer/deploy/truffle.html). The set is composed by 2 different smart contracts: 
